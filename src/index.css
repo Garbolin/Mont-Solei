@@ -1,1 +1,19 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --font-raleway: 'Raleway', sans-serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+
+    --color-porcelain-500: #f7f6f0;
+    --color-graphite-500: #2d2b27;
+    --color-ebony-500: #4b5240;
+    --color-olive-500: #6c725b;
+    --color-terracotta-500: #e07a5f;
+    --color-paleoak-500: #d5c5ad;
+}
+
+a {
+    font-family: var(--font-raleway);
+}
