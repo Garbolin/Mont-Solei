@@ -13,7 +13,7 @@ export default function IntroEventTypes({ title, description, icon }: IntroEvent
                     {title}
                 </h2>
             </div>
-            <h3 className="text-center max-w-xs text-pretty text-[16px] font-light font-raleway text-graphite-500">
+            <h3 className="text-center max-w-xs text-balanced text-[16px] font-light font-raleway text-graphite-500">
                 {description}
             </h3>
         </section>
