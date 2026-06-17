@@ -6,7 +6,7 @@ interface ValueCardProps {
 
 export default function ValueCard({ title, description, icon: Icon }: ValueCardProps) {
     return (
-        <section className="flex flex-col items-center justify-center gap-2 bg-parchment-500 p-4 py-6 rounded-lg shadow-md">
+        <section className="flex flex-col items-center justify-start gap-2 bg-parchment-500 p-4 py-6 rounded-lg shadow-md">
             <div className="flex flex-col justify-center gap-4 items-center">
                 <img src={Icon} alt={title} className="w-6 h-6 text-graphite-500" />
                 <h2 className="text-md font-regular text-graphite-500 font-raleawy">{title}</h2>
