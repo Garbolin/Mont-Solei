@@ -1,9 +1,9 @@
-import { ChevronRight } from 'lucide-react';
 import ValueCard from './ValueCard';
 import Flower from '@/assets/flower.svg';
 import Wheat from '@/assets/wheat.svg';
 import Volcano from '@/assets/volcano.svg';
 import Sunset from '@/assets/sunset.svg';
+import Button from '@/components/Button';
 
 export default function IntroHistory() {
     return (
@@ -12,19 +12,18 @@ export default function IntroHistory() {
                 <h2 className="font-cormorant uppercase italic text-porcelain-500 font-regular text-3xl">
                     Nuestra forma de estar
                 </h2>
-                <h3 className="ml-6 font-raleway text-porcelain-500 font-light italic text-md max-w-2xl">
+                <h3 className="font-raleway text-porcelain-500 font-light italic text-md max-w-2xl">
                     No somos un equipo de eventos. Somos guardianes de un territorio y anfitriones
                     de momentos que no se olvidan. Conoce la historia que hay detrás.
                 </h3>
-                <button
-                    className="ml-6 w-fit flex items-center justify-center border py-2 px-4 border-porcelain-500 text-porcelain-500 rounded-xl gap-6 h-fit
-                    hover:border-olive-500 hover:bg-porcelain-500 hover:text-olive-500 transition-all duration-300"
-                >
-                    <p className="uppercase font-raleway font-semibold text-sm">
-                        Conoce nuestra historia
-                    </p>
-                    <ChevronRight strokeWidth={2} className="" />
-                </button>
+                <Button
+                    text="Conoce nuestra historia"
+                    link="/history"
+                    filled={false}
+                    color="porcelain"
+                    textColor="olive"
+                    py="2"
+                />
             </div>
             <div className="h-px w-[70%] bg-porcelain-500/10"></div>
             <div className="grid grid-cols-4 gap-3 h-full w-full max-w-5xl mx-auto">

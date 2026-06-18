@@ -1,5 +1,5 @@
-import { ChevronRight } from 'lucide-react';
 import SpaceCarousel from './SpaceCarousel';
+import Button from '@/components/Button';
 
 export default function IntroSpaceSection() {
     return (
@@ -9,10 +9,7 @@ export default function IntroSpaceSection() {
                     Rodeado de belleza natural y cuidado hasta el último detalle, nuestro espacio
                     acoge celebraciones llenas de emoción, autenticidad y encanto.
                 </h2>
-                <button className="w-40 flex items-center justify-center border-2 py-1 border-paleoak-500 text-paleoak-500 rounded-2xl gap-6 h-fit hover:bg-paleoak-500 hover:text-white transition-all duration-300">
-                    <p className="uppercase font-raleway font-bold text-sm">Ver más</p>
-                    <ChevronRight strokeWidth={2} className="" />
-                </button>
+                <Button text="Ver más" link="/contact" filled={false} color="paleoak" py="1" />
             </div>
             <SpaceCarousel />
         </section>

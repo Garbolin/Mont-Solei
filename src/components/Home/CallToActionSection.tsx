@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react';
+import Button from '@/components/Button';
 
 export default function CallToActionSection() {
     return (
@@ -11,15 +11,13 @@ export default function CallToActionSection() {
                     Comparta con nosotros los detalles de su celebración y le acompañaremos en cada
                     paso para hacerla realidad.
                 </p>
-                <button
-                    className="w-fit flex items-center justify-center bg-terracotta-500 border py-2 px-4 text-porcelain-500 rounded-xl gap-6 h-fit
-                    hover:bg-transparent hover:text-terracotta-500 hover:border-terracotta-500 transition-all duration-300"
-                >
-                    <p className="uppercase font-raleway font-semibold text-sm">
-                        SOLICITAR INFORMACIÓN
-                    </p>
-                    <ChevronRight strokeWidth={2} className="" />
-                </button>
+                <Button
+                    text="SOLICITAR INFORMACIÓN"
+                    link="/contact"
+                    filled={true}
+                    color="terracotta"
+                    py="2"
+                />
             </div>
         </section>
     );
