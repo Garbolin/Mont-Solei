@@ -4,6 +4,7 @@ import IntroSpaceSection from '@/components/Home/IntroSpaceSection';
 import MissionSection from '@/components/Home/MissionSection';
 import IntroHistory from '@/components/Home/IntroHistory';
 import TestimonialsSection from '@/components/Home/TestimonialsSection';
+import CallToActionSection from '@/components/Home/CallToActionSection';
 
 export default function Index() {
     return (
@@ -14,6 +15,7 @@ export default function Index() {
             <MissionSection />
             <IntroHistory />
             <TestimonialsSection />
+            <CallToActionSection />
         </>
     );
 }

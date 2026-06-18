@@ -10,7 +10,7 @@ export default function IntroSection() {
             <div className="w-50 flex items-center justify-center">
                 <img src={Logo} alt="" />
             </div>
-            <div className="w-px bg-graphite-500/60 h-[150px]"></div>
+            <div className="w-px bg-graphite-500/60 h-[150px] my-6"></div>
             <div className="flex flex-col items-center justify-center gap-20 w-full">
                 <h2 className="uppercase max-w-xl text-center text-3xl text-graphite-500 italic font-cormorant font-regular text-pretty ">
                     Todo momento especial merece una gran celebración
