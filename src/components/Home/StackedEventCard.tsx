@@ -49,7 +49,7 @@ export default function StackedEventCard() {
     });
 
     return (
-        <section ref={containerRef} className="relative h-[520vh] bg-porcelain-500">
+        <section ref={containerRef} className="relative h-[520vh] bg-transparent">
             <div
                 className="
                     sticky
