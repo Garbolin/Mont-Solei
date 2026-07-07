@@ -18,6 +18,8 @@
     --color-olive-500: #6c725b;
     --color-terracotta-500: #b06c68;
     --color-paleoak-500: #d5c5ad;
+
+    --color-bronze-500: #c8967c;
 }
 
 a {
@@ -26,6 +28,7 @@ a {
 
 body {
     scroll-behavior: smooth;
+    background-color: var(--color-porcelain-500);
 }
 
 @theme inline {
