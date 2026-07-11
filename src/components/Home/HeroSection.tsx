@@ -1,6 +1,29 @@
+import { useEffect, useRef } from 'react';
+import { useNavbarTheme } from '@/context/NavbarThemeContext';
+
 export default function HeroSection() {
+    const ref = useRef<HTMLDivElement>(null);
+    const { setTheme } = useNavbarTheme();
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setTheme(entry.isIntersecting ? 'light' : 'dark'),
+            { rootMargin: '-64px 0px 0px 0px', threshold: 0 },
+        );
+
+        observer.observe(el);
+        return () => {
+            observer.disconnect();
+            setTheme('dark'); // reset al salir de Home
+        };
+    }, [setTheme]);
+
     return (
         <section
+            ref={ref}
             className="relative bg-[url('/images/hero_image.png')] bg-cover bg-center"
             style={{ height: 'calc(100vh + 80px)' }}
         >
