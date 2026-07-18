@@ -1,4 +1,4 @@
-import Logo from '@/assets/logo_no_text.svg';
+import Logo from '@/assets/logo_no_text.svg?react';
 import { Globe } from 'lucide-react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
 
@@ -15,7 +15,7 @@ export default function Navbar() {
             <div
                 className={`${textColor} h-13 w-13 flex items-center justify-center transition-colors duration-300`}
             >
-                <img src={Logo} alt="" />
+                <Logo className="h-13 w-13" />
             </div>
             <ul
                 className={`${textColor} flex flex-1 items-center justify-center space-x-10 uppercase text-xs font-bold tracking-widest transition-colors duration-300`}

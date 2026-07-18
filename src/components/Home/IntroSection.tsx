@@ -1,5 +1,5 @@
 import IntroEventTypes from '@/components/Home/IntroEventTypes';
-import Logo from '@/assets/logo_dark.png';
+import Logo from '@/assets/logo.svg?react';
 import Flower from '@/assets/flower.svg';
 import Wheat from '@/assets/wheat.svg';
 import Volcano from '@/assets/volcano.svg';
@@ -8,7 +8,7 @@ export default function IntroSection() {
     return (
         <section className="bg-porcelain-500 h-fit pb-10 w-full gap-7 flex flex-col items-center justify-center -pt-20">
             <div className="w-50 flex items-center justify-center">
-                <img src={Logo} alt="" />
+                <Logo className="w-50 h-50" />
             </div>
             <div className="w-px bg-graphite-500/60 h-[150px] my-6"></div>
             <div className="flex flex-col items-center justify-center gap-20 w-full">
