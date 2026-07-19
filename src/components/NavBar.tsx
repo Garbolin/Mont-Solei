@@ -1,7 +1,7 @@
 import Logo from '@/assets/logo_no_text.svg?react';
 import { Globe } from 'lucide-react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
-import SunLink from '@/components/SunLink';
+// import SunLink from '@/components/SunLink';
 
 export default function Navbar() {
     const { theme } = useNavbarTheme();
