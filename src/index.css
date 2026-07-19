@@ -154,3 +154,68 @@ body {
         @apply font-sans;
     }
 }
+
+/* SUN LINK */
+.sun-link {
+    position: relative;
+    display: inline-flex;
+    padding: 4px 2px;
+    z-index: 1;
+    transition: color 0.3s;
+}
+.sun-link svg {
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+    pointer-events: none;
+    z-index: -1;
+}
+.sun-link circle,
+.sun-link line {
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    fill: none;
+}
+.sun-core {
+    stroke-dasharray: 88;
+    stroke-dashoffset: 88;
+    transition: stroke-dashoffset 0.3s ease-out;
+}
+.sun-ray {
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    transition: stroke-dashoffset 0.3s ease-out;
+}
+.sun-link:hover .sun-core {
+    stroke-dashoffset: 0;
+}
+.sun-link:hover .sun-ray {
+    stroke-dashoffset: 0;
+}
+.sun-ray:nth-child(2) {
+    transition-delay: 0.03s;
+}
+.sun-ray:nth-child(3) {
+    transition-delay: 0.06s;
+}
+.sun-ray:nth-child(4) {
+    transition-delay: 0.09s;
+}
+.sun-ray:nth-child(5) {
+    transition-delay: 0.12s;
+}
+.sun-ray:nth-child(6) {
+    transition-delay: 0.15s;
+}
+.sun-ray:nth-child(7) {
+    transition-delay: 0.18s;
+}
+.sun-ray:nth-child(8) {
+    transition-delay: 0.21s;
+}
