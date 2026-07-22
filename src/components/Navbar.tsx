@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '@/assets/logo_no_text.svg?react';
 import { Globe } from 'lucide-react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
@@ -18,40 +19,36 @@ export default function Navbar() {
                 shadow-lg rounded-full"
         >
             <div
-                className={`${textColor} h-13 w-13 flex items-center justify-center transition-colors duration-300`}
+                className={`${textColor} h-13 w-13 flex items-center justify-center transition-colors duration-200`}
             >
                 <Logo className="h-13 w-13" />
             </div>
             <ul
-                className={`${textColor} flex flex-1 items-center justify-center space-x-10 uppercase text-xs font-bold tracking-widest transition-colors duration-300`}
+                className={`${textColor} flex flex-1 items-center justify-center space-x-10 uppercase text-xs font-bold tracking-widest transition-colors duration-200`}
             >
                 <li>
-                    <a
-                        href="/"
-                        className={`opacity-80 hover:opacity-100 hover:-translate-y-0.5 ${glowColor} transition-all duration-300 inline-block`}
+                    <Link
+                        to="/"
+                        className={`opacity-80 hover:opacity-100 hover:-translate-y-0.5 ${glowColor} transition-all duration-200 inline-block`}
                     >
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a
-                        href="/"
-                        className={`transition-all duration-300 hover:text-porcelain-300 ${glowColor}`}
+                    <Link
+                        to="/history"
+                        className={`opacity-80 hover:opacity-100 hover:-translate-y-0.5 ${glowColor} transition-all duration-200 inline-block`}
                     >
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/history" className="group relative inline-block py-1">
                         History
-                        <span className="absolute left-1/2 -bottom-0.5 h-[1.5px] w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/contact" className="group relative inline-block py-1">
+                    <Link
+                        to="/contact"
+                        className={`opacity-80 hover:opacity-100 hover:-translate-y-0.5 ${glowColor} transition-all duration-200 inline-block`}
+                    >
                         Contact
-                        <span className="absolute left-1/2 -bottom-0.5 h-[1.5px] w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
-                    </a>
+                    </Link>
                 </li>
                 {/* <li>
                     <SunLink href="/">Home</SunLink>

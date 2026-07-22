@@ -219,3 +219,15 @@ body {
 .sun-ray:nth-child(8) {
     transition-delay: 0.21s;
 }
+
+/* FADE IN */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

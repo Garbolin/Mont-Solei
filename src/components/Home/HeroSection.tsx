@@ -2,11 +2,14 @@ import { useEffect, useRef } from 'react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
 
 export default function HeroSection() {
-    const ref = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const bgRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
     const { setTheme } = useNavbarTheme();
 
+    // Navbar theme (sin cambios)
     useEffect(() => {
-        const el = ref.current;
+        const el = sectionRef.current;
         if (!el) return;
 
         const observer = new IntersectionObserver(
@@ -17,18 +20,65 @@ export default function HeroSection() {
         observer.observe(el);
         return () => {
             observer.disconnect();
-            setTheme('dark'); // reset al salir de Home
+            setTheme('dark');
         };
     }, [setTheme]);
 
+    // Parallax
+    useEffect(() => {
+        const section = sectionRef.current;
+        const bg = bgRef.current;
+        const content = contentRef.current;
+        if (!section || !bg || !content) return;
+
+        let ticking = false;
+
+        const update = () => {
+            const rect = section.getBoundingClientRect();
+            const progress = -rect.top; // 0 al llegar arriba, crece al hacer scroll
+
+            // fondo más lento -> sensación de profundidad
+            bg.style.transform = `translate3d(0, ${progress * 0.35}px, 0)`;
+
+            // texto se desvanece y sube al salir
+            const fade = Math.max(1 - progress / 400, 0);
+            content.style.opacity = `${fade}`;
+            content.style.transform = `translate3d(0, ${progress * 0.15}px, 0)`;
+
+            ticking = false;
+        };
+
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        };
+
+        update();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
         <section
-            ref={ref}
-            className="relative bg-[url('/images/hero_image.png')] bg-cover bg-center"
+            ref={sectionRef}
+            className="relative overflow-hidden"
             style={{ height: 'calc(100vh + 80px)' }}
         >
+            {/* Fondo sobredimensionado para que el movimiento no deje huecos */}
+            <div
+                ref={bgRef}
+                className="absolute inset-0 bg-[url('/images/hero_image.png')] bg-cover bg-center will-change-transform"
+                style={{ top: '-15%', height: '130%' }}
+            />
+
             <div className="absolute inset-0 bg-linear-to-t from-black/35 from-20% to-transparent to-50%"></div>
-            <div className="flex flex-col items-center justify-end h-full text-center pb-[120px] gap-3">
+
+            <div
+                ref={contentRef}
+                className="flex flex-col items-center justify-end h-full text-center pb-[120px] gap-3 will-change-transform"
+            >
                 <div className="relative z-10 justify-center text-center">
                     <h1 className="text-5xl font-light text-porcelain-500 mb-4 font-cormorant uppercase">
                         Celebre la magia de estar juntos
@@ -41,10 +91,11 @@ export default function HeroSection() {
                     </h2>
                 </div>
             </div>
+
             <svg
                 viewBox="0 0 1200 180"
                 preserveAspectRatio="none"
-                className="absolute bottom-0 left-0 w-full"
+                className="absolute bottom-0 left-0 w-full z-10"
                 style={{ height: '80px' }}
             >
                 <path d="M0,180 C600,21 600,21 1200,180 L1200,180 L0,180 Z" fill="#f7f6f0" />
