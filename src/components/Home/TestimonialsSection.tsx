@@ -1,5 +1,6 @@
 import TestimonialsCarousel from '@/components/Home/TestimonialsCarousel';
 import { useInView } from '@/hooks/useInView';
+import InteractiveBackground from '@/components/Home/InteractiveBackground';
 
 export default function TestimonialsSection() {
     const { ref, isInView } = useInView<HTMLElement>();
@@ -16,10 +17,11 @@ export default function TestimonialsSection() {
 
     return (
         <section
-            className="flex flex-col w-full h-[80vh] mx-auto items-center justify-center gap-6 bg-porcelain-500 "
+            className="relative isolate flex flex-col w-full h-[80vh] mx-auto items-center justify-center gap-6 bg-porcelain-500 overflow-hidden"
             ref={ref}
         >
-            <div className="flex flex-col w-[70%] items-start justify-center gap-6">
+            <InteractiveBackground />
+            <div className="relative z-10 flex flex-col w-[70%] items-start justify-center gap-6">
                 <h2
                     className={`pl-6 font-cormorant uppercase italic text-graphite-500 font-regular text-3xl ${fadeClass()}`}
                     style={fadeStyle(200)}
