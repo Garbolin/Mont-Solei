@@ -50,12 +50,14 @@ export default function SlideOpacity() {
         >
             <section className={`mask-x-from-90% ${fadeClass()}`} ref={ref}>
                 <CarouselContent>
-                    {images.map((image) => (
-                        <CarouselItem className={cn(`basis-2/10 transition-opacity`)} key={image}>
+                    {images.map((image, index) => (
+                        <CarouselItem className={cn(`basis-2/10 transition-opacity`)} key={index}>
                             <img
                                 alt="dddepth-248"
                                 className="h-80 w-full rounded-xl object-cover"
                                 src={image}
+                                loading="lazy"
+                                decoding="async"
                             />
                         </CarouselItem>
                     ))}
