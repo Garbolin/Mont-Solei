@@ -1,10 +1,21 @@
+import { useInView } from '@/hooks/useInView';
+
 export default function FormSection() {
+    const { ref, isInView } = useInView<HTMLElement>();
+    const fadeClass = () =>
+        `transition-all duration-700 ease-out ${
+            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`;
+
     const inputClassName =
         'text-xs font-raleway border border-bronze-500/15 bg-parchment-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-bronze-500 focus:border-transparent';
     const labelClassName = 'font-medium uppercase text-xs';
     return (
-        <section className="flex max-w-md flex-1 flex-col gap-6 rounded-lg bg-parchment-500/30 p-6 shadow-xl">
-            <form className="flex w-full flex-col gap-6">
+        <section
+            className="flex max-w-md flex-1 flex-col gap-6 rounded-lg bg-parchment-500/30 p-6 shadow-xl"
+            ref={ref}
+        >
+            <form className={`flex w-full flex-col gap-6 ${fadeClass()}`}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="name" className={labelClassName}>
                         Nombre
