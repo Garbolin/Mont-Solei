@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
-import Instagram from '@/assets/Instagram.svg';
-import Pinterest from '@/assets/Pinterest.svg';
-import Telegram from '@/assets/Telegram.svg';
+import Instagram from '@/assets/Instagram.svg?react';
+import Pinterest from '@/assets/Pinterest.svg?react';
+import Telegram from '@/assets/Telegram.svg?react';
 import { useInView } from '@/hooks/useInView';
 
 export default function SocialsSection() {
@@ -54,9 +54,9 @@ export default function SocialsSection() {
                 <div className="flex flex-col gap-2">
                     <p className="font-semibold uppercase text-xs">REDES SOCIALES</p>
                     <div className="flex gap-4">
-                        <img src={Telegram} alt="" className="w-6 h-7" />
-                        <img src={Instagram} alt="" className="w-6 h-7" />
-                        <img src={Pinterest} alt="" className="w-6 h-7" />
+                        <Telegram className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
+                        <Instagram className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
+                        <Pinterest className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
                     </div>
                 </div>
             </div>
