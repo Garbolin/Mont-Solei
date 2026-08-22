@@ -10,7 +10,16 @@ export default function Index() {
                 Un viaje de reconexión con la tierra, cultivando un espacio donde la naturaleza y la
                 comunidad se entrelazan en perfecta armonía.
             </h2>
-            <div className="w-full bg-ebony-500">
+
+            <div className="relative w-full bg-ebony-500 mt-15">
+                <svg
+                    viewBox="0 0 1200 180"
+                    preserveAspectRatio="none"
+                    className="absolute top-0 left-0 w-full -translate-y-full z-10 text-ebony-500"
+                    style={{ height: '80px' }}
+                >
+                    <path d="M0,0 C600,159 600,159 1200,0 L1200,180 L0,180 Z" fill="currentColor" />
+                </svg>
                 <TemporalLineSection />
             </div>
         </section>
