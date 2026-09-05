@@ -96,22 +96,24 @@ export default function EventItemCard({
                 zIndex: total - index,
                 boxShadow,
             }}
-            className="absolute inset-0 h-[400px] w-[900px]
-                rounded-xl transform-gpu origin-top backface-hidden
-                border border-white/10 bg-porcelain-500"
+            className="absolute inset-0 h-140 w-[88vw] max-w-225
+            origin-top transform-gpu rounded-xl border border-white/10 bg-porcelain-500 backface-hidden
+            sm:h-110 md:h-100"
         >
-            <div className="flex p-4 w-full h-full justify-between">
-                <div className="flex flex-col justify-center items-start p-6 gap-7 max-w-[55%]">
+            <div className="flex h-full w-full flex-col justify-between gap-4 p-3 sm:flex-row sm:gap-0 sm:p-4">
+                <div className="flex max-w-full flex-col items-start justify-center gap-4 p-3 sm:max-w-[55%] sm:flex-1 sm:gap-7 sm:p-6">
                     <div className="flex flex-col justify-start items-start gap-1">
-                        <h2 className="text-sm font-bold font-raleway uppercase tracking-widest text-graphite-500">
+                        <h2 className="text-xs sm:text-sm font-bold font-raleway uppercase tracking-widest text-graphite-500">
                             {card.title}
                         </h2>
-                        <h3 className="text-2xl italic font-medium font-cormorant text-graphite-500 uppercase">
+                        <h3 className="text-lg sm:text-2xl italic font-medium font-cormorant text-graphite-500 uppercase">
                             {card.subtitle}
                         </h3>
                     </div>
-                    <p className="text-sm font-raleway text-graphite-500">{card.description}</p>
-                    <div className="flex items-start justify-center gap-4">
+                    <p className="text-xs sm:text-sm font-raleway text-graphite-500 line-clamp-4 sm:line-clamp-none">
+                        {card.description}
+                    </p>
+                    <div className="flex w-full flex-wrap items-start justify-start gap-2 sm:w-auto sm:justify-center sm:gap-4">
                         <Button
                             text="SOLICITAR INFORMACIÓN"
                             link="/contact"
@@ -128,7 +130,7 @@ export default function EventItemCard({
                         />
                     </div>
                 </div>
-                <div className=" w-[45%] bg-graphite-500 h-full rounded-lg"></div>
+                <div className="min-h-24 w-full flex-1 rounded-lg bg-graphite-500 sm:h-full sm:w-[45%] sm:flex-none"></div>
             </div>
         </motion.div>
     );

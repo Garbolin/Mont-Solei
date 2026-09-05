@@ -1,6 +1,6 @@
-import Instagram from '@/assets/Instagram.svg';
-import Pinterest from '@/assets/Pinterest.svg';
-import Telegram from '@/assets/Telegram.svg';
+import Instagram from '@/assets/Instagram.svg?react';
+import Pinterest from '@/assets/Pinterest.svg?react';
+import Telegram from '@/assets/Telegram.svg?react';
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -11,9 +11,9 @@ export default function Footer() {
                     © {year} Montaña Solei — Espacio natural para eventos
                 </p>
                 <div className="flex gap-4">
-                    <img src={Telegram} alt="" className="w-7 h-7" />
-                    <img src={Instagram} alt="" className="w-7 h-7" />
-                    <img src={Pinterest} alt="" className="w-7 h-7" />
+                    <Telegram className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
+                    <Instagram className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
+                    <Pinterest className="w-7 h-7 text-graphite-500 hover:text-terracotta-500 transition-colors duration-200" />
                 </div>
                 <ul className="flex items-center gap-6 font-regular">
                     <li>

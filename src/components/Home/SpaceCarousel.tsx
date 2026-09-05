@@ -40,7 +40,7 @@ export default function SlideOpacity() {
 
     return (
         <Carousel
-            className="mx-2 w-full max-w-7xl"
+            className="mx-auto w-[calc(100%-2rem)] max-w-7xl sm:w-[calc(100%-1rem)]"
             opts={{
                 loop: true,
                 align: 'center',
@@ -50,19 +50,28 @@ export default function SlideOpacity() {
         >
             <section className={`mask-x-from-90% ${fadeClass()}`} ref={ref}>
                 <CarouselContent>
-                    {images.map((image) => (
-                        <CarouselItem className={cn(`basis-2/10 transition-opacity`)} key={image}>
+                    {images.map((image, index) => (
+                        <CarouselItem
+                            className={cn(
+                                'basis-[80%] transition-opacity sm:basis-1/2 md:basis-1/3 lg:basis-1/5',
+                            )}
+                            key={index}
+                        >
                             <img
                                 alt="dddepth-248"
-                                className="h-80 w-full rounded-xl object-cover"
+                                className="h-62 w-full rounded-xl object-cover sm:h-64 md:h-72 lg:h-80"
                                 src={image}
+                                loading="lazy"
+                                decoding="async"
                             />
                         </CarouselItem>
                     ))}
                 </CarouselContent>
             </section>
-            <CarouselPrevious className={arrowButtonStyles} />
-            <CarouselNext className={arrowButtonStyles} />
+            <div className="hidden items-center justify-center gap-3 pt-5 lg:flex">
+                <CarouselPrevious className={cn(arrowButtonStyles, 'static translate-y-0')} />
+                <CarouselNext className={cn(arrowButtonStyles, 'static translate-y-0')} />
+            </div>
         </Carousel>
     );
 }

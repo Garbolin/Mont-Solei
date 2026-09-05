@@ -1,10 +1,21 @@
+import { useInView } from '@/hooks/useInView';
+
 export default function FormSection() {
+    const { ref, isInView } = useInView<HTMLElement>();
+    const fadeClass = () =>
+        `transition-all duration-700 ease-out ${
+            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`;
+
     const inputClassName =
         'text-xs font-raleway border border-bronze-500/15 bg-parchment-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-bronze-500 focus:border-transparent';
     const labelClassName = 'font-medium uppercase text-xs';
     return (
-        <section className="flex max-w-md flex-1 flex-col gap-6 rounded-lg bg-parchment-500/30 p-6 shadow-xl">
-            <form className="flex w-full flex-col gap-6">
+        <section
+            className="mx-auto flex w-full max-w-md flex-col gap-6 rounded-lg bg-parchment-500/30 p-4 shadow-xl sm:p-6 md:mx-0"
+            ref={ref}
+        >
+            <form className={`flex w-full flex-col gap-6 ${fadeClass()}`}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="name" className={labelClassName}>
                         Nombre
@@ -33,14 +44,14 @@ export default function FormSection() {
                         Su mensaje
                     </label>
                     <textarea
-                        className={`${inputClassName} stretch h-32 resize-none`} //hay que arreglarlo
+                        className={`${inputClassName} w-full h-32 resize-none`}
                         id="message"
                         placeholder="Su mensaje"
                     />
                 </div>
                 <button
                     type="submit"
-                    className="bg-terracotta-500 w-fit self-end uppercase font-raleway font-semibold text-sm text-porcelain-500 hover:bg-transparent hover:text-terracotta-500 border-terracotta-500 py-2 px-10 rounded-lg transition-all duration-300 hover:shadow-md"
+                    className="bg-terracotta-500 w-full sm:w-fit self-stretch sm:self-end uppercase font-raleway font-semibold text-sm text-porcelain-500 hover:bg-transparent hover:text-terracotta-500 border border-terracotta-500 py-2 px-10 rounded-lg transition-all duration-300 hover:shadow-md"
                 >
                     Enviar solicitud
                 </button>

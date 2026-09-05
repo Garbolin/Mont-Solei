@@ -15,16 +15,19 @@ export default function CallToActionSection() {
     });
 
     return (
-        <section className="bg-parchment-500 w-full h-[50vh] items-center justify-center" ref={ref}>
-            <div className="flex flex-col gap-8 mx-auto w-[70%] items-center justify-center h-full">
+        <section
+            className="bg-parchment-500 w-full min-h-[50vh] flex items-center justify-center py-12 md:py-0"
+            ref={ref}
+        >
+            <div className="flex flex-col gap-6 sm:gap-8 mx-auto w-[90%] sm:w-[80%] md:w-[70%] items-center justify-center h-full text-center">
                 <h2
-                    className={`font-cormorant text-graphite-500 font-semibold text-4xl ${fadeClass()}`}
+                    className={`font-cormorant text-graphite-500 font-semibold text-2xl sm:text-3xl md:text-4xl ${fadeClass()}`}
                     style={fadeStyle(200)}
                 >
                     Su día especial comienza aquí
                 </h2>
                 <p
-                    className={`text-center font-raleway text-graphite-500 font-light italic text-lg text-pretty max-w-2xl ${fadeClass()}`}
+                    className={`text-center font-raleway text-graphite-500 font-light italic text-sm sm:text-base md:text-lg text-pretty max-w-2xl ${fadeClass()}`}
                     style={fadeStyle(400)}
                 >
                     Comparta con nosotros los detalles de su celebración y le acompañaremos en cada
