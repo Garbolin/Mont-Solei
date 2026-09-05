@@ -17,17 +17,17 @@ export default function SocialsSection() {
     return (
         <section className="flex flex-col gap-10" ref={ref}>
             <div
-                className={`flex items-center justify-start gap-4 ${fadeClass()}`}
+                className={`flex min-w-0 items-center justify-start gap-4 ${fadeClass()}`}
                 style={fadeStyle(250)}
             >
                 <Mail strokeWidth={1} />
                 <div className="flex flex-col gap-1">
                     <p className="font-semibold uppercase text-xs">EMAIL</p>
-                    <p className="font-light text-sm">holaquetal@gmail.com</p>
+                    <p className="wrap-break-word font-light text-sm">holaquetal@gmail.com</p>
                 </div>
             </div>
             <div
-                className={`flex items-center justify-start gap-4 ${fadeClass()}`}
+                className={`flex min-w-0 items-center justify-start gap-4 ${fadeClass()}`}
                 style={fadeStyle(350)}
             >
                 <Phone strokeWidth={1} />
@@ -37,17 +37,17 @@ export default function SocialsSection() {
                 </div>
             </div>
             <div
-                className={`flex items-center justify-start gap-4 ${fadeClass()}`}
+                className={`flex min-w-0 items-center justify-start gap-4 ${fadeClass()}`}
                 style={fadeStyle(450)}
             >
                 <MapPin strokeWidth={1} />
                 <div className="flex flex-col gap-1">
                     <p className="font-semibold uppercase text-xs">UBICACIÓN</p>
-                    <p className="font-light text-sm">LoremIpsumNoseque, Ecuador</p>
+                    <p className="wrap-break-word font-light text-sm">LoremIpsumNoseque, Ecuador</p>
                 </div>
             </div>
             <div
-                className={`flex items-center justify-start gap-4 ${fadeClass()}`}
+                className={`flex min-w-0 items-center justify-start gap-4 ${fadeClass()}`}
                 style={fadeStyle(550)}
             >
                 <MapPin className="opacity-0" />

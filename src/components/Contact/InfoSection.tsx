@@ -13,8 +13,8 @@ export default function InfoSection() {
     });
 
     return (
-        <section className="flex flex-col gap-5" ref={ref}>
-            <div className="flex flex-col gap-15">
+        <section className="flex w-full max-w-md flex-col gap-5" ref={ref}>
+            <div className="flex flex-col gap-12 sm:gap-15">
                 <div className={`max-w-md ${fadeClass()}`} style={fadeStyle(150)}>
                     <p>
                         Estamos aquí para transformar su visión en una realidad inolvidable.
