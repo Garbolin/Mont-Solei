@@ -20,14 +20,14 @@ export default function MissionSection() {
             className="flex flex-col gap-6 h-fit w-full bg-porcelain-500 items-center justify-center py-10"
             ref={ref}
         >
-            <div className="h-px w-[70%] bg-graphite-500/10"></div>
-            <div className="flex flex-col gap-6 h-full w-full py-10 max-w-4xl mx-auto items-center justify-center">
+            <div className="h-px w-[85%] sm:w-[70%] bg-graphite-500/10"></div>
+            <div className="flex flex-col gap-6 h-full w-full py-10 max-w-4xl mx-auto items-center justify-center px-4">
                 <h2
-                    className={`mb-10 uppercase max-w-xl text-center text-3xl text-graphite-500 italic font-cormorant font-regular text-pretty ${fadeClass()}`}
+                    className={`mb-6 sm:mb-10 uppercase max-w-xl text-center text-2xl sm:text-3xl text-graphite-500 italic font-cormorant font-regular text-pretty ${fadeClass()}`}
                 >
                     NUESTRA MISIÓN ES CREAR UNA EXPERIENCIA INOLVIDABLE
                 </h2>
-                <div className={`grid grid-cols-2 gap-10 h-full w-full max-w-5xl mx-auto`}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 h-full w-full max-w-5xl mx-auto">
                     <MissionCard
                         title="Momentos que unen"
                         description="Diseñamos experiencias pensadas para compartir, conectar y celebrar junto a quienes más importan."
@@ -58,7 +58,7 @@ export default function MissionSection() {
                     />
                 </div>
             </div>
-            <div className="h-px w-[70%] bg-graphite-500/10"></div>
+            <div className="h-px w-[85%] sm:w-[70%] bg-graphite-500/10"></div>
         </section>
     );
 }

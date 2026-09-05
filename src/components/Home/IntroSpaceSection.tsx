@@ -13,11 +13,13 @@ export default function IntroSpaceSection() {
 
     return (
         <section
-            className="flex flex-col gap-6 h-fit w-full bg-porcelain-500 items-center justify-center py-20"
+            className="flex flex-col gap-6 h-fit w-full bg-porcelain-500 items-center justify-center py-12 sm:py-16 md:py-20"
             ref={ref}
         >
-            <div className={`flex gap-6 h-fit w-[80%] items-center justify-around ${fadeClass()}`}>
-                <h2 className="w-2/3 font-raleway italic text-graphite-500 font-light text-[20px] max-w-2xl">
+            <div
+                className={`flex flex-col md:flex-row gap-4 md:gap-6 h-fit w-[90%] md:w-[80%] items-center md:items-center justify-center md:justify-around ${fadeClass()}`}
+            >
+                <h2 className="w-full md:w-2/3 text-center md:text-left font-raleway italic text-graphite-500 font-light text-base sm:text-lg md:text-[20px] max-w-2xl">
                     Rodeado de belleza natural y cuidado hasta el último detalle, nuestro espacio
                     acoge celebraciones llenas de emoción, autenticidad y encanto.
                 </h2>

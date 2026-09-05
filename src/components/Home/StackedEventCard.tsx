@@ -62,16 +62,21 @@ export default function StackedEventCard() {
                 "
                 style={{ perspective: '1400px' }}
             >
-                <div className="relative h-[400px] w-[900px] transform-gpu [transform-style:preserve-3d]">
-                    {memoizedCards.map((card, index) => (
-                        <EventItemCard
-                            key={card.id}
-                            card={card}
-                            index={index}
-                            total={memoizedCards.length}
-                            progress={smoothProgress}
-                        />
-                    ))}
+                <div
+                    className="sticky top-0 flex h-screen w-full items-center justify-center"
+                    style={{ perspective: '1400px' }}
+                >
+                    <div className="relative h-140 w-[88vw] max-w-225 transform-gpu transform-3d sm:h-110 md:h-100">
+                        {memoizedCards.map((card, index) => (
+                            <EventItemCard
+                                key={card.id}
+                                card={card}
+                                index={index}
+                                total={memoizedCards.length}
+                                progress={smoothProgress}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

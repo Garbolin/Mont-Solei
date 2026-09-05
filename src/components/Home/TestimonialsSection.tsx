@@ -17,26 +17,26 @@ export default function TestimonialsSection() {
 
     return (
         <section
-            className="relative isolate flex flex-col w-full h-[80vh] mx-auto items-center justify-center gap-6 bg-porcelain-500 overflow-hidden"
+            className="relative isolate flex flex-col w-full min-h-[85vh] sm:min-h-[75vh] md:min-h-[80vh] mx-auto items-center justify-center gap-6 bg-porcelain-500 overflow-hidden py-12 md:py-16"
             ref={ref}
         >
             <InteractiveBackground active={isInView} />
-            <div className="relative z-10 flex flex-col w-[70%] items-start justify-center gap-6">
+            <div className="relative z-10 flex flex-col w-[90%] sm:w-[80%] md:w-[70%] items-start justify-center gap-6">
                 <h2
-                    className={`pl-6 font-cormorant uppercase italic text-graphite-500 font-regular text-3xl ${fadeClass()}`}
+                    className={`px-2 sm:pl-6 font-cormorant uppercase italic text-graphite-500 font-regular text-2xl sm:text-3xl ${fadeClass()}`}
                     style={fadeStyle(200)}
                 >
                     Experiencias que hablan por sí solas
                 </h2>
                 <h3
-                    className={`pl-6 font-raleway text-graphite-500 font-light italic text-md max-w-2xl ${fadeClass()}`}
+                    className={`px-2 sm:pl-6 font-raleway text-graphite-500 font-light italic text-sm sm:text-md max-w-2xl ${fadeClass()}`}
                     style={fadeStyle(400)}
                 >
                     Cada celebración es única. Conozca las historias de quienes hicieron de este
                     lugar el escenario de sus recuerdos más especiales.
                 </h3>
                 <div
-                    className={`p-6 w-full flex items-center justify-center ${fadeClass()}`}
+                    className={`p-2 sm:p-6 w-full flex items-center justify-center ${fadeClass()}`}
                     style={fadeStyle(600)}
                 >
                     <TestimonialsCarousel />
