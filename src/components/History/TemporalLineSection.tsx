@@ -69,7 +69,7 @@ const TIMELINE_DATA: TimelineItem[] = [
 function ImageSlot({ image }: { image: TimelineImage }) {
     if (image.src) {
         return (
-            <div className="relative h-full w-full min-h-[160px] overflow-hidden rounded-sm">
+            <div className="relative h-full w-full min-h-[140px] sm:min-h-[160px] overflow-hidden rounded-sm ...">
                 <img
                     src={image.src}
                     alt={image.alt}
@@ -106,7 +106,7 @@ function TextBlock({ year, text }: { year?: string; text: string }) {
     if (year) {
         return (
             <div className="flex h-full flex-col justify-center py-2">
-                <span className="font-cormorant text-4xl font-light text-porcelain-500">
+                <span className="font-cormorant text-3xl sm:text-4xl font-light text-porcelain-500">
                     {year}
                 </span>
                 <span className="mt-3 mb-4 block h-px w-10 bg-porcelain-500/30" />
@@ -206,7 +206,7 @@ export default function TemporalLineSection({ items = TIMELINE_DATA }: { items?:
         dotPositions.length > 1 ? dotPositions[dotPositions.length - 1] - dotPositions[0] : 0;
 
     return (
-        <div className="font-raleway py-20 px-6">
+        <div className="font-raleway py-12 px-4 sm:py-16 sm:px-6 md:py-20">
             <div ref={containerRef} className="relative mx-auto max-w-4xl">
                 {dotPositions.length > 1 && (
                     <div
