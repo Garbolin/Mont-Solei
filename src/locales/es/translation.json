@@ -1,0 +1,18 @@
+{
+    "contact": {
+        "form": {
+            "name_label": "Nombre",
+            "name_placeholder": "Nombre",
+            "email_label": "Email",
+            "email_placeholder": "Email",
+            "eventType_label": "Tipo de evento",
+            "eventType_placeholder": "Seleccione un tipo de evento",
+            "eventType_birthday": "Cumpleaños",
+            "eventType_wedding": "Boda",
+            "eventType_corporate": "Corporativo",
+            "message_label": "Su mensaje",
+            "message_placeholder": "Su mensaje",
+            "submit_button": "Enviar solicitud"
+        }
+    }
+}

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import Logo from '@/assets/logo_no_text.svg?react';
-import { Globe } from 'lucide-react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
-// import SunLink from '@/components/SunLink';
+import LanguageSwitcher from './LangSwitcher';
 
 export default function Navbar() {
     const { theme } = useNavbarTheme();
@@ -50,18 +49,9 @@ export default function Navbar() {
                         Contact
                     </Link>
                 </li>
-                {/* <li>
-                    <SunLink href="/">Home</SunLink>
-                </li>
-                <li>
-                    <SunLink href="/history">History</SunLink>
-                </li>
-                <li>
-                    <SunLink href="/contact">Contact</SunLink>
-                </li> */}
             </ul>
             <div className={`${textColor} transition-colors duration-300`}>
-                <Globe strokeWidth={2} />
+                <LanguageSwitcher textColor={textColor} />
             </div>
         </nav>
     );

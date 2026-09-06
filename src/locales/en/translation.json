@@ -1,0 +1,18 @@
+{
+    "contact": {
+        "form": {
+            "name_label": "Name",
+            "name_placeholder": "Name",
+            "email_label": "Email",
+            "email_placeholder": "Email",
+            "eventType_label": "Event Type",
+            "eventType_placeholder": "Select an event type",
+            "eventType_birthday": "Birthday",
+            "eventType_wedding": "Wedding",
+            "eventType_corporate": "Corporate",
+            "message_label": "Your message",
+            "message_placeholder": "Your message",
+            "submit_button": "Submit request"
+        }
+    }
+}
