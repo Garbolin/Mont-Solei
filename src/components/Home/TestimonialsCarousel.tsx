@@ -30,8 +30,10 @@ export default function TestimonialsCarousel() {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className={arrowButtonStyles} />
-            <CarouselNext className={arrowButtonStyles} />
+            <div className="items-center justify-center gap-3 pt-5 flex">
+                <CarouselPrevious className={cn(arrowButtonStyles, 'static translate-y-0')} />
+                <CarouselNext className={cn(arrowButtonStyles, 'static translate-y-0')} />
+            </div>
         </Carousel>
     );
 }
