@@ -14,5 +14,15 @@
             "message_placeholder": "Su mensaje",
             "submit_button": "Enviar solicitud"
         }
+    },
+    "footer": {
+        "title": "Montaña Solei — Espacio natural para eventos",
+        "legal_notice": "Aviso legal",
+        "privacy": "Privacidad"
+    },
+    "navbar": {
+        "home": "Home",
+        "history": "Historia",
+        "contact": "Contacto"
     }
 }
