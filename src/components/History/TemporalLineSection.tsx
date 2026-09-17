@@ -157,10 +157,10 @@ function TimelineRow({
             }}
             className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-16"
         >
-            <div className={`h-full ${fadeClass()}`} style={fadeStyle(0)}>
+            <div className={`h-full ${fadeClass()}`} style={fadeStyle(300)}>
                 {first}
             </div>
-            <div className={`h-full ${fadeClass()}`} style={fadeStyle(150)}>
+            <div className={`h-full ${fadeClass()}`} style={fadeStyle(450)}>
                 {second}
             </div>
         </div>

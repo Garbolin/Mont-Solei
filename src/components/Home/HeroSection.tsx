@@ -1,12 +1,29 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavbarTheme } from '@/context/NavbarThemeContext';
+import { useInView } from '@/hooks/useInView';
 
 export default function HeroSection() {
-    const sectionRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const { setTheme } = useNavbarTheme();
     const [sectionHeight, setSectionHeight] = useState<number | null>(null);
+
+    const { ref, isInView } = useInView<HTMLElement>();
+
+    const setRefs = (el: HTMLElement | null) => {
+        sectionRef.current = el;
+        ref.current = el;
+    };
+
+    const fadeClass = () =>
+        `transition-all duration-700 ease-out ${
+            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`;
+
+    const fadeStyle = (delayMs: number) => ({
+        transitionDelay: isInView ? `${delayMs}ms` : '0ms',
+    });
 
     // Fija la altura real del viewport en px, evitando que 100dvh
     // se recalcule (y genere jank) durante el propio scroll en iOS.
@@ -83,7 +100,7 @@ export default function HeroSection() {
 
     return (
         <section
-            ref={sectionRef}
+            ref={setRefs}
             className="relative overflow-hidden"
             style={{ height: sectionHeight ? `${sectionHeight}px` : '100dvh' }}
         >
@@ -105,12 +122,17 @@ export default function HeroSection() {
                 className="flex flex-col items-center justify-center md:justify-end h-full text-center gap-3 px-4 will-change-transform pb-[env(safe-area-inset-bottom,0px)] md:pb-[120px]"
             >
                 <div className="relative z-10 justify-center text-center">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-porcelain-500 mb-4 font-cormorant uppercase">
+                    <h1
+                        className={`text-3xl sm:text-4xl md:text-5xl font-light text-porcelain-500 mb-4 font-cormorant uppercase ${fadeClass()}`}
+                    >
                         Celebre la magia de estar juntos
                     </h1>
                 </div>
                 <div className="relative z-10 justify-center text-center">
-                    <h2 className="text-base sm:text-lg md:text-xl max-w-xs sm:max-w-xl md:max-w-3xl font-light text-porcelain-500 mb-4 font-raleway italic">
+                    <h2
+                        className={`text-base sm:text-lg md:text-xl max-w-xs sm:max-w-xl md:max-w-3xl font-light text-porcelain-500 mb-4 font-raleway italic ${fadeClass()}`}
+                        style={fadeStyle(150)}
+                    >
                         En un entorno natural incomparable, cada celebración encuentra la belleza,
                         la intimidad y la exclusividad que merece.
                     </h2>

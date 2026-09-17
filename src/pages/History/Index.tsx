@@ -1,12 +1,32 @@
 import TemporalLineSection from '@/components/History/TemporalLineSection';
+import { useInView } from '@/hooks/useInView';
 
 export default function Index() {
+    const { ref, isInView } = useInView<HTMLElement>();
+
+    const fadeClass = () =>
+        `transition-all duration-700 ease-out ${
+            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`;
+
+    const fadeStyle = (delayMs: number) => ({
+        transitionDelay: isInView ? `${delayMs}ms` : '0ms',
+    });
+
     return (
-        <section className="pt-20 sm:pt-24 md:pt-30 mx-auto w-full min-h-screen font-raleway flex flex-col items-center justify-start">
-            <h1 className="w-full text-center text-3xl sm:text-4xl md:text-5xl font-cormorant text-black font-semibold mb-4 sm:mb-7 px-4">
+        <section
+            className="pt-20 sm:pt-24 md:pt-30 mx-auto w-full min-h-screen font-raleway flex flex-col items-center justify-start"
+            ref={ref}
+        >
+            <h1
+                className={`w-full text-center text-3xl sm:text-4xl md:text-5xl font-cormorant text-black font-semibold mb-4 sm:mb-7 px-4 ${fadeClass()}`}
+            >
                 Nuestra historia
             </h1>
-            <h2 className="max-w-4xl text-pretty mx-auto text-center text-sm sm:text-base font-raleway text-black font-regular mb-10 px-4">
+            <h2
+                className={`max-w-4xl text-pretty mx-auto text-center text-sm sm:text-base font-raleway text-black font-regular mb-10 px-4 ${fadeClass()} `}
+                style={fadeStyle(150)}
+            >
                 Un viaje de reconexión con la tierra, cultivando un espacio donde la naturaleza y la
                 comunidad se entrelazan en perfecta armonía.
             </h2>
